@@ -29,6 +29,8 @@ Android
 USAGE
 ============
 After adding the plugin via CLI, add the following java code in main activity class of your android project
+```js
+
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		// TODO Auto-generated method stub
@@ -57,9 +59,15 @@ After adding the plugin via CLI, add the following java code in main activity cl
 		}
 	} 
 
+```
 Example
 ============
 When device ready event is called, call the following function in javascript file to send request to native java code to open the setting page for GPS location service.
-            document.addEventListener('deviceready', function(){
+          
+```js
+scope = $scope;
+```  document.addEventListener('deviceready', function(){
             	GPSDetection.checkGPSService(gpsSuccessHandler, gpsErrorHandler, [{}]);
             });
+
+```
