@@ -65,8 +65,7 @@ Example
 When device ready event is called, call the following function in javascript file to send request to native java code to open the setting page for GPS location service.
           
 ```js
-scope = $scope;
-```  document.addEventListener('deviceready', function(){
+ document.addEventListener('deviceready', function(){
             	GPSDetection.checkGPSService(gpsSuccessHandler, gpsErrorHandler, [{}]);
             });
 
