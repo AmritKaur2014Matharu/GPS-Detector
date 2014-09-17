@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+id="com.phonegap.GPSTracker" 
+version="0.0.2">
+	<engines>
+		 <engine name="cordova" version=">=3.2.0" />
+	</engines>
+	<name>GPSDetector</name>
+	<description>GPSDetector plugin checks if GPS service is enabled or not and open the GPS setting page to change its settongs.</description>
+	<author>Aman Arora</author>
+	<keywords>gps, location, detector</keywords>
+	<license>Apache 2.0 License</license>
+	  <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+	<js-module src="www/gps.detection.js" name="GPSDetection">
+		<clobbers target="GPSDetection" />
+	</js-module>
+	<platform name="android">
+   		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="GPSDetection" >
+                <param name="android-package" value="com.gps.GPSDetection.GPSDetection"/>
+            </feature>
+        </config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+			    <uses-permission android:name="android.permission.INTERNET" />
+				<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+		<source-file src="src/com/gps/GPSDetection/GPSDetection.java" target-dir="src/com/gps/GPSDetection" />
+	</platform>
+	</plugin>
